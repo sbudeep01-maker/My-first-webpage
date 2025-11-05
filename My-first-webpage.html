@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: #f2f2f2;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      margin-top: 60px;
+      width: 200px;
+      background-color: #444;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 0;
+    }
+
+    .sidebar a:hover {
+      background-color: #555;
+    }
+
+    /* Main content area */
+    .main-content {
+      margin-top: 60px;
+      margin-left: 220px;
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .card p {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    Cathexis Tech - Our Services
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h2 style="text-align:center;">Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Camera Installation</h3>
+        <p>We provide professional CCTV and IP camera setup for secure monitoring.</p>
+      </div>
+      <div class="card">
+        <h3>System Integration</h3>
+        <p>Integrating your security and software systems for smooth operation.</p>
+      </div>
+      <div class="card">
+        <h3>Software Testing</h3>
+        <p>Thorough testing to ensure your apps and devices perform perfectly.</p>
+      </div>
+      <div class="card">
+        <h3>Network Setup</h3>
+        <p>Reliable wired and wireless network solutions for your business.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
