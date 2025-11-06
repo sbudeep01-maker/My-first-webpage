@@ -3,177 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cathexis Tech - Our Services</title>
+  <title>Sbu's Cool Mix</title>
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #5eeb51;
-      color: rgb(8, 22, 10);
+      font-family: "Poppins", Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      text-align: center;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 10px 40px;
-      position: fixed;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #202020;
       width: 100%;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff0000;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+      letter-spacing: 1px;
     }
 
-    /* Logo */
-    .navbar .logo img {
-      height: 50px;
-      width: auto;
+    .container {
+      margin-top: 50px;
+      max-width: 800px;
+      width: 90%;
     }
 
-    /* Navbar links */
-    .navbar nav a {
-      color: rgb(8, 22, 10);
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 600;
+    video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+      outline: none;
     }
 
-    .navbar nav a:hover {
-      color: #0a420d;
-      text-decoration: underline;
+    h2 {
+      margin-top: 20px;
+      font-size: 28px;
+      color: #ff4444;
     }
 
-    /* Hero section */
-    .hero {
-      background: linear-gradient(rgba(0, 31, 63, 0.4), rgba(0, 31, 63, 0.4)),
-                  url('https://images.unsplash.com/photo-1581092795360-fd1f5d3d4d30?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
+    p {
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    .controls {
+      margin-top: 15px;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff0000, #ff6600);
       color: white;
-      text-align: center;
-      padding: 150px 20px 100px;
-      margin-top: 60px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     }
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 50, 50, 0.8);
     }
 
-    .hero p {
-      font-size: 18px;
-      color: #d0eaff;
-    }
-
-    /* Services Section */
-    .services-section {
-      text-align: center;
-      padding: 60px 30px;
-      background-color: #fff;
-    }
-
-    .services-section h2 {
-      font-size: 32px;
-      color: #001f3f;
-      margin-bottom: 40px;
-    }
-
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
-
-    .card {
-      background: #f4f6f9;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 25px;
-      width: 260px;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .card h3 {
-      color: #001f3f;
-      margin-top: 0;
-    }
-
-    .card p {
-      color: #555;
-    }
-
-    /* Footer */
     footer {
-      background-color: #001f3f;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 40px;
+      margin-top: 60px;
+      padding: 15px;
+      color: #777;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">
-      <img width="150" height="49"
-        src="https://cathexisvideo.com/wp-content/uploads/2024/08/Cathexis-Logo-150.png"
-        alt="Cathexis Logo">
+  <header>🎵 Sbu's Cool Mix Player 🎶</header>
+
+  <div class="container">
+    <video id="mixVideo" controls>
+      <source src="yourvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2>🔥 Summer Vibes Mix</h2>
+    <p>Enjoy the best mix by Sbu — chill beats and smooth transitions.</p>
+
+    <div class="controls">
+      <button onclick="playVideo()">▶ Play</button>
+      <button onclick="pauseVideo()">⏸ Pause</button>
     </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </nav>
   </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Innovative Security Solutions</h1>
-    <p>Professional Installation, Integration, and Support for Modern Surveillance Systems</p>
-  </section>
+  <footer>© 2025 Sbu Mix | Made with ❤️ in Durban</footer>
 
-  <!-- Services -->
-  <section class="services-section">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Camera Installation</h3>
-        <p>Professional CCTV and IP camera setup for maximum security coverage.</p>
-      </div>
-      <div class="card">
-        <h3>System Integration</h3>
-        <p>Connecting your security and IT systems for seamless operations.</p>
-      </div>
-      <div class="card">
-        <h3>Software Testing</h3>
-        <p>Ensuring reliability and performance for all security-related software.</p>
-      </div>
-      <div class="card">
-        <h3>Network Setup</h3>
-        <p>Strong wired and wireless network solutions for business environments.</p>
-      </div>
-    </div>
-  </section>
+  <script>
+    const video = document.getElementById('mixVideo');
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Cathexis Tech
-  </footer>
+    function playVideo() {
+      video.play();
+    }
+
+    function pauseVideo() {
+      video.pause();
+    }
+  </script>
 
 </body>
 </html>
-
-
