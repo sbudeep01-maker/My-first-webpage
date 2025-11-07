@@ -1,120 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sbu's Cool Mix</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cathexis Tech | Smart Security Solutions</title>
   <style>
+    /* Base Styles */
     body {
       margin: 0;
-      font-family: "Poppins", Arial, sans-serif;
-      background-color: #0f0f0f;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #f4f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #5eeb51;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar .logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .navbar nav a {
+      color: #041704;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: #083b0d;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 31, 63, 0.5), rgba(0, 31, 63, 0.5)),
+                  url('https://images.unsplash.com/photo-1581092795360-fd1f5d3d4d30?auto=format&fit=crop&w=1600&q=80') center/cover;
       color: #fff;
       text-align: center;
+      padding: 180px 20px 130px;
+      margin-top: 65px;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #d4e8ff;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Services */
+    .services-section {
+      text-align: center;
+      padding: 80px 30px;
+      background-color: #fff;
+    }
+
+    .services-section h2 {
+      font-size: 36px;
+      color: #003366;
+      margin-bottom: 50px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .services-section h2::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 60%;
+      background-color: #5eeb51;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .services {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
 
-    header {
-      background-color: #202020;
-      width: 100%;
-      padding: 15px 0;
-      font-size: 24px;
-      font-weight: bold;
-      color: #ff0000;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-      letter-spacing: 1px;
-    }
-
-    .container {
-      margin-top: 50px;
-      max-width: 800px;
-      width: 90%;
-    }
-
-    video {
-      width: 100%;
+    .card {
+      background: #f9fafc;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-      outline: none;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+      width: 270px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    h2 {
-      margin-top: 20px;
-      font-size: 28px;
-      color: #ff4444;
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
-    p {
-      color: #ccc;
-      font-size: 16px;
+    .card h3 {
+      color: #001f3f;
+      margin-bottom: 10px;
     }
 
-    .controls {
-      margin-top: 15px;
+    .card p {
+      color: #555;
+      font-size: 15px;
     }
 
-    button {
-      background: linear-gradient(90deg, #ff0000, #ff6600);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      margin: 0 10px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: all 0.2s;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    }
-
-    button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255, 50, 50, 0.8);
-    }
-
+    /* Footer */
     footer {
-      margin-top: 60px;
-      padding: 15px;
-      color: #777;
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
       font-size: 14px;
+      margin-top: 60px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar nav a {
+        margin: 10px 0;
+      }
+
+      .services {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>🎵 Sbu's Cool Mix Player 🎶</header>
-
-  <div class="container">
-    <video id="mixVideo" controls>
-      <source src="yourvideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <h2>🔥 Summer Vibes Mix</h2>
-    <p>Enjoy the best mix by Sbu — chill beats and smooth transitions.</p>
-
-    <div class="controls">
-      <button onclick="playVideo()">▶ Play</button>
-      <button onclick="pauseVideo()">⏸ Pause</button>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://cathexisvideo.com/wp-content/uploads/2024/08/Cathexis-Logo-150.png" alt="Cathexis Logo" />
     </div>
-  </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-  <footer>© 2025 Sbu Mix | Made with ❤️ in Durban</footer>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Smart Security. Smarter Future.</h1>
+    <p>Leading-edge security and video management solutions engineered for performance and reliability.</p>
+  </section>
 
-  <script>
-    const video = document.getElementById('mixVideo');
+  <!-- Services Section -->
+  <section class="services-section">
+    <h2>Our Core Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Camera Installation</h3>
+        <p>Precision setup of IP and CCTV cameras for clear, secure, and reliable surveillance.</p>
+      </div>
+      <div class="card">
+        <h3>System Integration</h3>
+        <p>Connecting hardware and software seamlessly for smooth, automated operations.</p>
+      </div>
+      <div class="card">
+        <h3>Software Testing</h3>
+        <p>Rigorous testing to guarantee stability, scalability, and strong performance.</p>
+      </div>
+      <div class="card">
+        <h3>Network Solutions</h3>
+        <p>Custom network design ensuring secure and fast connections for all devices.</p>
+      </div>
+    </div>
+  </section>
 
-    function playVideo() {
-      video.play();
-    }
-
-    function pauseVideo() {
-      video.pause();
-    }
-  </script>
+  <!-- Footer -->
+  <footer>
+    © 2025 Cathexis Tech | Designed with 💡 by Sbu
+  </footer>
 
 </body>
 </html>
