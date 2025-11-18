@@ -157,9 +157,9 @@
       </div>
       <div class="card">
         <h2>Hobbies</h2>
-        <p>Making <a class="text-success" type="button" href="https://youtube.com"> YouTube Videos</a></p>
-        <form action="" href="http://cathexisvideo.co.za">
-          <button type ="submit" class="btn btn-success"><i></i> Show </button>
+        <p>Making <a class="text-success" type="button" href="https://www.youtube.com/@KADOrsa"> YouTube Videos</a></p>
+        <form action="" href="https://cathexisvideo.com/">
+          <button type ="submit" class="btn btn-success"><i></i> Show place of work </button>
         </form>
       </div>
     </aside>
