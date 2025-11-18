@@ -157,7 +157,6 @@
       </div>
       <div class="card">
         <h2>Hobbies</h2>
-        <p class="muted">Making YouTube Videos <a href="https://youtube.com"></a></p>
       </div>
     </aside>
   </main>
