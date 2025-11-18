@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sibusiso — CV</title>
-
   <style>
     :root{
       --accent:#0b74de;
@@ -14,7 +11,6 @@
       --maxw:900px;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -26,7 +22,6 @@
       line-height:1.45;
       color:#111827;
     }
-
     .wrap{
       width:100%;
       max-width:var(--maxw);
@@ -38,21 +33,19 @@
       grid-template-columns: 1fr 320px;
       gap:20px;
     }
-
     header{
       grid-column: 1 / -1;
       display:flex;
       gap:20px;
       align-items:center;
-      border-bottom:1px solid #eef2f7;
+      border-bottom:1px solid #EEF2F7;
       padding-bottom:18px;
     }
-
     .avatar{
       width:84px;
       height:84px;
       border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#6c5ce7);
+      background:linear-gradient(135deg,var(--accent),#6C5CE7);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -60,10 +53,8 @@
       font-size:28px;
       font-weight:700;
     }
-
     h1{margin:0;font-size:22px}
     .muted{color:var(--muted)}
-
     .card{
       background:var(--card);
       border-radius:10px;
@@ -71,9 +62,7 @@
       box-shadow:0 4px 14px rgba(0,0,0,0.04);
       margin-bottom:16px;
     }
-
     h2{margin-top:0;font-size:16px}
-
     .skills span{
       background:#f1f5f9;
       padding:6px 10px;
@@ -83,7 +72,6 @@
       margin-bottom:6px;
       display:inline-block;
     }
-
     @media (max-width:880px){
       .wrap{grid-template-columns:1fr}
     }
@@ -91,20 +79,18 @@
 </head>
 <body>
   <main class="wrap">
-
     <!-- HEADER -->
     <header>
       <div class="avatar">SN</div>
       <div>
         <h1>Sibusiso — IT / Software Tester</h1>
         <p class="muted">
-          Durban, South Africa · 
-          <strong>081 804 4146</strong> · 
+          Durban, South Africa ·
+          <strong>081 804 4146</strong> ·
           <strong>sbudeep01@gmail.com</strong>
         </p>
       </div>
     </header>
-
     <!-- MAIN CONTENT -->
     <section>
       <div class="card">
@@ -113,10 +99,8 @@
           Dedicated and hands-on IT / Software Tester with strong troubleshooting skills and experience in the IT field. Skilled in wiring, technical problem-solving, and analysing system issues. Creative thinker who learns fast and enjoys improving systems and workflows.
         </p>
       </div>
-
       <div class="card">
         <h2>Experience</h2>
-
         <p><strong>IT Field Experience</strong></p>
         <ul class="muted">
           <li>Practical experience in technical troubleshooting and PC support.</li>
@@ -126,7 +110,6 @@
           <li>Basic networking and wiring setup experience.</li>
         </ul>
       </div>
-
       <div class="card">
         <h2>Education</h2>
         <ul class="muted">
@@ -134,7 +117,6 @@
           <li>High School: Maths Literacy was a favourite subject</li>
         </ul>
       </div>
-
       <div class="card">
         <h2>Projects</h2>
         <ul class="muted">
@@ -143,13 +125,11 @@
           <li>Testing automation scripts for daily tasks</li>
         </ul>
       </div>
-
       <div class="card">
         <h2>References</h2>
         <p class="muted">Available on request.</p>
       </div>
     </section>
-
     <!-- SIDEBAR -->
     <aside>
       <div class="card">
@@ -160,7 +140,6 @@
           <strong>Location:</strong> Durban, SA<br>
         </p>
       </div>
-
       <div class="card">
         <h2>Skills</h2>
         <div class="skills">
@@ -172,14 +151,14 @@
           <span>IT Support</span>
         </div>
       </div>
-
       <div class="card">
         <h2>Languages</h2>
         <p class="muted">Zulu (Native)<br>English (Fluent)</p>
       </div>
+      <div class="card">
+        <h2>Hobbies</h2>
+        <p class="muted">Making YouTube Videos <a href="https://youtube.com"></a></p>
+      </div>
     </aside>
-
   </main>
 </body>
-</html>
-
