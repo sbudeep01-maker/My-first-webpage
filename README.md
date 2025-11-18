@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cathexis Tech | Smart Security Solutions</title>
-  <style>
-    /* ====== BASE STYLES ====== */
+
+  /* ====== BASE STYLES ====== */
     body {
       margin: 0;
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
