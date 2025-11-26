@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Sibu — Modern CV + AI Chat</title>
+<title>Sibusiso — Modern CV + AI Chat</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -18,10 +18,11 @@
 body{background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
 .resume{display:grid;grid-template-columns:1fr;gap:26px;max-width:900px;width:100%}
 .base{background:var(--card);border-radius:16px;padding:26px;box-shadow:0 0 35px rgba(0,0,0,0.4);position:relative}
-.photo{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#00d4ff);display:flex;align-items:center;justify-content:center;font-size:48px;color:white;margin:auto;margin-bottom:18px;box-shadow:0 0 20px var(--glow);transition:transform 0.4s}
+.photo{width:140px;height:140px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:48px;color:white;margin:auto;margin-bottom:18px;box-shadow:0 0 20px var(--glow);transition:transform 0.4s}
+.photo img{width:100%;height:100%;object-fit:cover}
 .photo:hover{transform:scale(1.05) rotate(5deg)}
 .info{text-align:center;margin-bottom:22px}
-.info .name{font-size:26px;font-weight:700}
+.info .name{font-size:28px;font-weight:700}
 .info .job{font-size:16px;color:var(--muted)}
 h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
 .contact a{color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px;margin:6px 0;font-size:14px;transition:0.3s}
@@ -31,6 +32,8 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
 .interests-items div{display:inline-flex;flex-direction:column;align-items:center;width:80px;margin:10px;color:var(--text);cursor:pointer;transition:0.3s;box-shadow:0 0 6px rgba(91,91,255,0.3);border-radius:12px;padding:10px}
 .interests-items div:hover{transform:scale(1.1);box-shadow:0 0 12px var(--glow)}
 .interests-items i{font-size:24px;color:var(--accent);margin-bottom:6px}
+.btn-social{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);transition:0.3s;cursor:pointer;margin:4px}
+.btn-social:hover{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--glow)}
 .chatbox{position:fixed;right:20px;bottom:20px;width:320px;border-radius:16px;background:var(--card);box-shadow:0 8px 35px rgba(0,0,0,0.5);display:flex;flex-direction:column;overflow:hidden;font-size:14px}
 .chat-header{padding:12px;font-weight:700;background:var(--accent);color:#fff}
 .chat-messages{padding:12px;flex:1;overflow:auto;background:rgba(255,255,255,0.03)}
@@ -38,7 +41,7 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
 .chat-input input{flex:1;padding:10px;border:none;background:transparent;color:var(--text)}
 .chat-input button{padding:10px 14px;border:none;background:var(--glow);color:#fff;cursor:pointer;transition:0.3s}
 .chat-input button:hover{background:var(--accent)}
-@media (max-width:600px){.resume{padding:10px}.photo{width:120px;height:120px;font-size:40px}.info .name{font-size:22px}.info .job{font-size:14px}}
+@media (max-width:600px){.resume{padding:10px}.photo{width:120px;height:120px;font-size:40px}.info .name{font-size:24px}.info .job{font-size:14px}}
 </style>
 </head>
 <body>
@@ -59,6 +62,7 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
       <h3>Contact Me</h3>
       <a href="tel:0818044146"><i class="fas fa-phone"></i>081 804 4146</a>
       <a href="mailto:sbudeep01@gmail.com"><i class="fas fa-envelope"></i>sbudeep01@gmail.com</a>
+      <a href="https://www.instagram.com/sibusiso_nx/" target="_blank" class="btn-social"><i class="fab fa-instagram"></i>Instagram</a>
       <a><i class="fas fa-map-marker-alt"></i>Durban, South Africa</a>
       <a href="Sibusiso-CV.pdf" class="download"><i class="fas fa-download"></i>Download CV</a>
     </div>
