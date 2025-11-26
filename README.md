@@ -65,10 +65,10 @@
 
       <div class="skills">
         <div style="font-weight:600;margin-top:14px">Skills</div>
-        <div class="skill">Troubleshooting</div>
-        <div class="skill">Creative</div>
-        <div class="skill">Wiring</div>
-        <div class="skill">Driving</div>
+        <a class="skill" href="https://www.google.com/search?q=Troubleshooting" target="_blank">Troubleshooting</a>
+        <a class="skill" href="https://www.google.com/search?q=Creative" target="_blank">Creative</a>
+        <a class="skill" href="https://www.google.com/search?q=Wiring" target="_blank">Wiring</a>
+        <a class="skill" href="https://www.google.com/search?q=Driving" target="_blank">Driving</a>
       </div>
 
     </aside>
