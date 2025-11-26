@@ -54,7 +54,7 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
 <div class="resume">
   <div class="base">
     <div class="profile">
-      <div class="photo"><img src="profile.jpg" alt="Sibusiso"></div>
+      <div class="photo"><img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" alt="Sibusiso"></div>
       <div class="info">
         <h1 class="name">Sibusiso</h1>
         <h2 class="job">IT / Software Tester</h2>
