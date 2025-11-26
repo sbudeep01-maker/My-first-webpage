@@ -13,44 +13,50 @@
   --muted:#8693a7;
   --accent:#5b5bff;
   --glow:#7b7bff;
+  --transition:0.4s;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
-.resume{display:grid;grid-template-columns:1fr;gap:26px;max-width:900px;width:100%}
-.base{background:var(--card);border-radius:16px;padding:26px;box-shadow:0 0 35px rgba(0,0,0,0.4);position:relative}
+body{background:var(--bg);color:var(--text);padding:0;margin:0;font-family:Poppins,sans-serif;transition:background var(--transition),color var(--transition)}
+.dark-mode{--bg:#0a0f1d;--card:#11182b;--text:#d9e2f3;--muted:#8693a7;--accent:#5b5bff;--glow:#7b7bff}
+.light-mode{--bg:#f4f4f4;--card:#fff;--text:#111827;--muted:#6b7280;--accent:#0b74de;--glow:#0b74de}
+*{box-sizing:border-box;transition:all var(--transition)}
+.resume{display:grid;grid-template-columns:1fr;gap:26px;max-width:900px;width:100%;padding:20px}
+.base{background:var(--card);border-radius:16px;padding:26px;box-shadow:0 0 35px rgba(0,0,0,0.4);position:relative;overflow:hidden}
 .photo{width:140px;height:140px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:48px;color:white;margin:auto;margin-bottom:18px;box-shadow:0 0 20px var(--glow);transition:transform 0.4s}
 .photo img{width:100%;height:100%;object-fit:cover}
 .photo:hover{transform:scale(1.05) rotate(5deg)}
 .info{text-align:center;margin-bottom:22px}
-.info .name{font-size:28px;font-weight:700}
-.info .job{font-size:16px;color:var(--muted)}
+.info .name{font-size:32px;font-weight:700}
+.info .job{font-size:18px;color:var(--muted)}
 h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
-.contact a{color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px;margin:6px 0;font-size:14px;transition:0.3s}
-.contact a:hover{color:var(--glow)}
+.contact a, .btn-social{display:inline-flex;align-items:center;gap:8px;margin:6px 4px;padding:6px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);text-decoration:none;color:var(--text);cursor:pointer;transition:0.3s}
+.contact a:hover, .btn-social:hover{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--glow)}
 .skills span{display:inline-block;background:rgba(255,255,255,0.04);padding:10px 14px;border-radius:14px;margin:5px;font-size:14px;border:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:0.3s;box-shadow:0 0 6px rgba(91,91,255,0.3)}
 .skills span:hover{transform:scale(1.1);border-color:var(--glow);box-shadow:0 0 12px var(--glow)}
 .interests-items div{display:inline-flex;flex-direction:column;align-items:center;width:80px;margin:10px;color:var(--text);cursor:pointer;transition:0.3s;box-shadow:0 0 6px rgba(91,91,255,0.3);border-radius:12px;padding:10px}
 .interests-items div:hover{transform:scale(1.1);box-shadow:0 0 12px var(--glow)}
 .interests-items i{font-size:24px;color:var(--accent);margin-bottom:6px}
-.btn-social{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);padding:6px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);transition:0.3s;cursor:pointer;margin:4px}
-.btn-social:hover{background:var(--accent);color:#fff;box-shadow:0 0 12px var(--glow)}
-.chatbox{position:fixed;right:20px;bottom:20px;width:320px;border-radius:16px;background:var(--card);box-shadow:0 8px 35px rgba(0,0,0,0.5);display:flex;flex-direction:column;overflow:hidden;font-size:14px}
+.chatbox{position:fixed;right:20px;bottom:20px;width:320px;border-radius:16px;background:var(--card);box-shadow:0 8px 35px rgba(0,0,0,0.5);display:flex;flex-direction:column;overflow:hidden;font-size:14px;z-index:1000}
 .chat-header{padding:12px;font-weight:700;background:var(--accent);color:#fff}
 .chat-messages{padding:12px;flex:1;overflow:auto;background:rgba(255,255,255,0.03)}
 .chat-input{display:flex;border-top:1px solid rgba(255,255,255,0.1)}
 .chat-input input{flex:1;padding:10px;border:none;background:transparent;color:var(--text)}
 .chat-input button{padding:10px 14px;border:none;background:var(--glow);color:#fff;cursor:pointer;transition:0.3s}
 .chat-input button:hover{background:var(--accent)}
-@media (max-width:600px){.resume{padding:10px}.photo{width:120px;height:120px;font-size:40px}.info .name{font-size:24px}.info .job{font-size:14px}}
+@media (max-width:600px){.photo{width:120px;height:120px;font-size:40px}.info .name{font-size:24px}.info .job{font-size:14px}}
+.fire-animation{position:fixed;top:0;left:0;width:100%;height:100%;background:url('https://i.ibb.co/fH8rQF1/fire.gif') center/cover no-repeat;z-index:2000;display:flex;align-items:center;justify-content:center}
+.mode-toggle{position:fixed;top:20px;right:20px;padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:12px;cursor:pointer;z-index:1000;transition:0.3s}
+.mode-toggle:hover{background:var(--glow)}
 </style>
 </head>
-<body>
+<body class="dark-mode">
+<div class="fire-animation" id="fireAnim"></div>
+<button class="mode-toggle" id="modeToggle">Toggle Mode</button>
 <div class="resume">
   <div class="base">
     <div class="profile">
       <div class="photo"><img src="profile.jpg" alt="Sibusiso"></div>
       <div class="info">
-        <h1 class="name">SBU</h1>
+        <h1 class="name">Sibusiso</h1>
         <h2 class="job">IT / Software Tester</h2>
       </div>
     </div>
@@ -64,7 +70,7 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
       <a href="mailto:sbudeep01@gmail.com"><i class="fas fa-envelope"></i>sbudeep01@gmail.com</a>
       <a href="https://www.instagram.com/sibusiso_nx/" target="_blank" class="btn-social"><i class="fab fa-instagram"></i>Instagram</a>
       <a><i class="fas fa-map-marker-alt"></i>Durban, South Africa</a>
-      <a href="Sibusiso-CV.pdf" class="download"><i class="fas fa-download"></i>Download CV</a>
+      <a href="Sibusiso-CV.pdf" class="btn-social"><i class="fas fa-download"></i>Download CV</a>
     </div>
     <div class="skills">
       <h3>Skills</h3>
@@ -83,27 +89,24 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
         <div><i class="fas fa-gamepad"></i><span>Gaming</span></div>
       </div>
     </div>
-  </div>
-
-  <div class="func">
-    <div class="work">
-      <h3><i class="fa fa-briefcase"></i>Experience</h3>
-      <ul>
-        <li><span>IT Field Technician / Tester</span><small>Cathexis Technologies</small><small>Testing systems, troubleshooting, wiring & device setup.</small></li>
-        <li><span>Software Testing</span><small>Hands-on QA & bug reporting</small></li>
-      </ul>
-    </div>
-
-    <div class="edu">
-      <h3><i class="fa fa-graduation-cap"></i>Education</h3>
-      <ul>
-        <li><span>A+ & IT Fundamentals (current)</span><small>Self-study</small></li>
-        <li><span>Matric — Maths Literacy</span><small>Burnwood Secondary</small></li>
-      </ul>
+    <div class="func">
+      <div class="work">
+        <h3><i class="fa fa-briefcase"></i>Experience</h3>
+        <ul>
+          <li><span>IT Field Technician / Tester</span><small>Cathexis Technologies</small><small>Testing systems, troubleshooting, wiring & device setup.</small></li>
+          <li><span>Software Testing</span><small>Hands-on QA & bug reporting</small></li>
+        </ul>
+      </div>
+      <div class="edu">
+        <h3><i class="fa fa-graduation-cap"></i>Education</h3>
+        <ul>
+          <li><span>A+ & IT Fundamentals (current)</span><small>Self-study</small></li>
+          <li><span>Matric — Maths Literacy</span><small>Burnwood Secondary</small></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-
 <div class="chatbox">
   <div class="chat-header">Ask AI about me</div>
   <div class="chat-messages" id="messages">
@@ -114,8 +117,16 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
     <button id="sendBtn">Send</button>
   </div>
 </div>
-
 <script>
+// Fire animation
+setTimeout(()=>document.getElementById('fireAnim').style.display='none',5000);
+// Dark/light toggle
+const bodyEl=document.body;
+document.getElementById('modeToggle').addEventListener('click',()=>{
+  bodyEl.classList.toggle('light-mode');
+  bodyEl.classList.toggle('dark-mode');
+});
+// AI chat
 const messagesEl=document.getElementById('messages');
 const inputEl=document.getElementById('chatInput');
 const sendBtn=document.getElementById('sendBtn');
