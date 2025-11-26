@@ -89,7 +89,7 @@
           <h3>Quick links</h3>
           <div style="display:flex;gap:12px;flex-wrap:wrap">
             <a href="#projects" style="text-decoration:none;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)">Projects</a>
-            <a href="#cv" style="text-decoration:none;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)">Download CV</a>
+            <a href="888ad337-46bd-4b0c-a17d-8852d3d396a0.pdf" style="text-decoration:none;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)">Download CV</a>
           </div>
         </div>
 
