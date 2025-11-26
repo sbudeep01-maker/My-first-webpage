@@ -45,7 +45,7 @@
 
     /* small screens */
     @media (max-width:900px){.wrap{grid-template-columns:1fr;padding:18px}.chatbox{right:12px;left:12px;width:auto}}
-  </style>
+  .download-btn{text-decoration:none;padding:10px 14px;border-radius:10px;background:rgba(79,70,229,0.25);font-size:14px;color:#e6eef8;border:1px solid rgba(79,70,229,0.6);box-shadow:0 0 12px rgba(79,70,229,0.5);transition:0.3s ease;} .download-btn:hover{transform:translateY(-2px);box-shadow:0 0 18px rgba(79,70,229,0.9);} .fade{opacity:0;transform:translateY(20px);transition:0.8s ease;} .fade.show{opacity:1;transform:translateY(0);} </style>
 </head>
 <body>
   <div class="wrap">
@@ -89,7 +89,7 @@
           <h3>Quick links</h3>
           <div style="display:flex;gap:12px;flex-wrap:wrap">
             <a href="#projects" style="text-decoration:none;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)">Projects</a>
-            <a href="888ad337-46bd-4b0c-a17d-8852d3d396a0.pdf" style="text-decoration:none;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)">Download CV</a>
+            <a href="Sibusiso-CV.pdf" class="download-btn">⬇ Download CV</a>
           </div>
         </div>
 
@@ -150,5 +150,5 @@
 
     inputEl.addEventListener('keydown', (e)=>{ if(e.key==='Enter') sendBtn.click(); });
   </script>
-</body>
+<script> const faders=document.querySelectorAll('.section, .card, .profile'); const obs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); } }); },{threshold:0.2}); faders.forEach(f=>{ f.classList.add('fade'); obs.observe(f); }); </script> </body>
 </html>
