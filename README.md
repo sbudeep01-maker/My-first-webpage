@@ -118,6 +118,8 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
   </div>
 </div>
 <script>
+  // Fire animation
+setTimeout(()=>document.getElementById('fireAnim').style.display='none',1000);
 // Dark/light toggle
 const bodyEl=document.body;
 document.getElementById('modeToggle').addEventListener('click',()=>{
