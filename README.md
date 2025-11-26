@@ -6,61 +6,46 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0a0f1d;
-    --card:#11182b;
-    --text:#d9e2f3;
-    --muted:#8693a7;
-    --accent:#5b5bff;
-    --glow:#7b7bff;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-  body{background:var(--bg);color:var(--text);padding:40px;display:flex;justify-content:center}
-
-  .resume{display:grid;grid-template-columns:320px 1fr;gap:26px;max-width:1200px;width:100%}
-
-  /* LEFT SIDE */
-  .base{background:var(--card);border-radius:16px;padding:26px;box-shadow:0 0 35px rgba(0,0,0,0.4);position:relative}
-  .photo{width:120px;height:120px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#00d4ff);display:flex;align-items:center;justify-content:center;font-size:42px;color:white;margin:auto;margin-bottom:18px;box-shadow:0 0 18px var(--glow);transition:transform 0.4s}
-  .photo:hover{transform:scale(1.05) rotate(5deg)}
-  .info{text-align:center;margin-bottom:22px}
-  .info .name{font-size:22px;font-weight:700}
-  .info .job{font-size:14px;color:var(--muted)}
-  h3{margin:18px 0 10px;color:var(--accent);font-size:15px}
-
-  .contact a{color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px;margin:6px 0;font-size:14px;transition:0.3s}
-  .contact a:hover{color:var(--glow)}
-  .contact i{color:var(--accent)}
-
-  .skills span{display:inline-block;background:rgba(255,255,255,0.04);padding:8px 12px;border-radius:12px;margin:5px;font-size:13px;border:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:0.3s}
-  .skills span:hover{transform:scale(1.1);border-color:var(--glow)}
-
-  /* RIGHT SIDE */
-  .func{background:var(--card);border-radius:16px;padding:30px;box-shadow:0 0 35px rgba(0,0,0,0.35)}
-  .func h3 i{margin-right:8px;color:var(--accent)}
-  ul{list-style:none;margin-top:10px}
-  ul li{margin-bottom:14px;color:var(--muted)}
-  ul li span{display:block;color:var(--text);font-weight:600;font-size:14px}
-  ul li small{display:block;font-size:12px;color:var(--muted)}
-
-  .interests-items div{display:inline-flex;flex-direction:column;align-items:center;width:70px;margin:10px;color:var(--text)}
-  .interests-items i{font-size:22px;color:var(--accent);margin-bottom:6px}
-
-  /* Chatbox */
-  .chatbox{position:fixed;right:28px;bottom:28px;width:320px;border-radius:14px;background:var(--card);box-shadow:0 8px 35px rgba(0,0,0,0.5);display:flex;flex-direction:column;overflow:hidden;font-size:14px}
-  .chat-header{padding:12px;font-weight:700;background:var(--accent);color:#fff}
-  .chat-messages{padding:12px;flex:1;overflow:auto;background:rgba(255,255,255,0.03)}
-  .chat-input{display:flex;border-top:1px solid rgba(255,255,255,0.1)}
-  .chat-input input{flex:1;padding:10px;border:none;background:transparent;color:var(--text)}
-  .chat-input button{padding:10px 14px;border:none;background:var(--glow);color:#fff;cursor:pointer;transition:0.3s}
-  .chat-input button:hover{background:var(--accent)}
+:root{
+  --bg:#0a0f1d;
+  --card:#11182b;
+  --text:#d9e2f3;
+  --muted:#8693a7;
+  --accent:#5b5bff;
+  --glow:#7b7bff;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
+.resume{display:grid;grid-template-columns:1fr;gap:26px;max-width:900px;width:100%}
+.base{background:var(--card);border-radius:16px;padding:26px;box-shadow:0 0 35px rgba(0,0,0,0.4);position:relative}
+.photo{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#00d4ff);display:flex;align-items:center;justify-content:center;font-size:48px;color:white;margin:auto;margin-bottom:18px;box-shadow:0 0 20px var(--glow);transition:transform 0.4s}
+.photo:hover{transform:scale(1.05) rotate(5deg)}
+.info{text-align:center;margin-bottom:22px}
+.info .name{font-size:26px;font-weight:700}
+.info .job{font-size:16px;color:var(--muted)}
+h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
+.contact a{color:var(--text);text-decoration:none;display:flex;align-items:center;gap:10px;margin:6px 0;font-size:14px;transition:0.3s}
+.contact a:hover{color:var(--glow)}
+.skills span{display:inline-block;background:rgba(255,255,255,0.04);padding:10px 14px;border-radius:14px;margin:5px;font-size:14px;border:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:0.3s;box-shadow:0 0 6px rgba(91,91,255,0.3)}
+.skills span:hover{transform:scale(1.1);border-color:var(--glow);box-shadow:0 0 12px var(--glow)}
+.interests-items div{display:inline-flex;flex-direction:column;align-items:center;width:80px;margin:10px;color:var(--text);cursor:pointer;transition:0.3s;box-shadow:0 0 6px rgba(91,91,255,0.3);border-radius:12px;padding:10px}
+.interests-items div:hover{transform:scale(1.1);box-shadow:0 0 12px var(--glow)}
+.interests-items i{font-size:24px;color:var(--accent);margin-bottom:6px}
+.chatbox{position:fixed;right:20px;bottom:20px;width:320px;border-radius:16px;background:var(--card);box-shadow:0 8px 35px rgba(0,0,0,0.5);display:flex;flex-direction:column;overflow:hidden;font-size:14px}
+.chat-header{padding:12px;font-weight:700;background:var(--accent);color:#fff}
+.chat-messages{padding:12px;flex:1;overflow:auto;background:rgba(255,255,255,0.03)}
+.chat-input{display:flex;border-top:1px solid rgba(255,255,255,0.1)}
+.chat-input input{flex:1;padding:10px;border:none;background:transparent;color:var(--text)}
+.chat-input button{padding:10px 14px;border:none;background:var(--glow);color:#fff;cursor:pointer;transition:0.3s}
+.chat-input button:hover{background:var(--accent)}
+@media (max-width:600px){.resume{padding:10px}.photo{width:120px;height:120px;font-size:40px}.info .name{font-size:22px}.info .job{font-size:14px}}
 </style>
 </head>
 <body>
 <div class="resume">
   <div class="base">
     <div class="profile">
-      <div class="photo"><i class="fas fa-user"></i></div>
+      <div class="photo"><img src="profile.jpg" alt="Sibusiso"></div>
       <div class="info">
         <h1 class="name">Sibusiso</h1>
         <h2 class="job">IT / Software Tester</h2>
@@ -85,6 +70,15 @@
       <span onclick="window.open('https://www.google.com/search?q=Creative+Thinking','_blank')">Creative Thinking</span>
       <span onclick="window.open('https://www.google.com/search?q=IT+Support','_blank')">IT Support</span>
     </div>
+    <div class="interests">
+      <h3><i class="fas fa-star"></i>Interests</h3>
+      <div class="interests-items">
+        <div onclick="window.open('https://www.youtube.com/@KADOrsa','_blank')"><i class="fas fa-music"></i><span>Music</span></div>
+        <div><i class="fas fa-video"></i><span>Editing</span></div>
+        <div><i class="fas fa-code"></i><span>Tech</span></div>
+        <div><i class="fas fa-gamepad"></i><span>Gaming</span></div>
+      </div>
+    </div>
   </div>
 
   <div class="func">
@@ -102,16 +96,6 @@
         <li><span>A+ & IT Fundamentals (current)</span><small>Self-study</small></li>
         <li><span>Matric — Maths Literacy</span><small>Burnwood Secondary</small></li>
       </ul>
-    </div>
-
-    <div class="interests">
-      <h3><i class="fas fa-star"></i>Interests</h3>
-      <div class="interests-items">
-        <div><i class="fas fa-music"></i><span>Music</span></div>
-        <div><i class="fas fa-video"></i><span>Editing</span></div>
-        <div><i class="fas fa-code"></i><span>Tech</span></div>
-        <div><i class="fas fa-gamepad"></i><span>Gaming</span></div>
-      </div>
     </div>
   </div>
 </div>
@@ -131,7 +115,6 @@
 const messagesEl=document.getElementById('messages');
 const inputEl=document.getElementById('chatInput');
 const sendBtn=document.getElementById('sendBtn');
-
 function appendMessage(text,who='ai'){
   const div=document.createElement('div');
   div.className='msg '+(who==='ai'?'ai':'user');
@@ -139,7 +122,6 @@ function appendMessage(text,who='ai'){
   messagesEl.appendChild(div);
   messagesEl.scrollTop=messagesEl.scrollHeight;
 }
-
 async function sendToAi(question){
   const q=question.toLowerCase();
   if(q.includes('skill')) return 'Sibusiso\'s main skills: Troubleshooting, Software Testing, Wiring, Creative Thinking, IT Support.';
@@ -148,7 +130,6 @@ async function sendToAi(question){
   if(q.includes('hire')||q.includes('job')) return 'He is an IT / Software Tester — ideal for QA/testing roles.';
   return 'Nice question! Ask about specific skills, experience, or contact info.';
 }
-
 sendBtn.addEventListener('click',()=>{const text=inputEl.value.trim();if(!text)return;appendMessage(text,'user');inputEl.value='';appendMessage('...','ai');setTimeout(async()=>{const aiResp=await sendToAi(text);const last=messagesEl.querySelectorAll('.msg.ai');if(last.length)last[last.length-1].textContent=aiResp;},500);});
 inputEl.addEventListener('keydown',e=>{if(e.key==='Enter')sendBtn.click();});
 </script>
