@@ -118,10 +118,6 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
   </div>
 </div>
 <script>
-// Fire animation
-  setTimeout(() => {
-    document.getElementById('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg').style.display = 'none';
-  }, 2000);
 // Dark/light toggle
 const bodyEl=document.body;
 document.getElementById('modeToggle').addEventListener('click',()=>{
