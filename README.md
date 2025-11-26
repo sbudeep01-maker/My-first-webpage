@@ -50,7 +50,7 @@ h3{margin:18px 0 10px;color:var(--accent);font-size:16px}
     <div class="profile">
       <div class="photo"><img src="profile.jpg" alt="Sibusiso"></div>
       <div class="info">
-        <h1 class="name">Sibusiso</h1>
+        <h1 class="name">SBU</h1>
         <h2 class="job">IT / Software Tester</h2>
       </div>
     </div>
