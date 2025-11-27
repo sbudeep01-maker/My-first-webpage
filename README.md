@@ -68,7 +68,7 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
 /* Mode toggle */
 #modeToggle{position:fixed;top:20px;left:20px;padding:10px 14px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent),var(--glow));color:#fff;cursor:pointer;z-index:1500}
 
-</style>
+.light-mode{--bg:#f4f4f4;--card:#ffffff;--text:#111827;--muted:#555;--accent:#0b74de;--glow:#0b74de} </style>
 </head>
 <body>
 <div id="fireAnim"></div>
@@ -77,12 +77,12 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
 <div class="container">
   <div class="card header-card">
     <div class="header">
-      <div class="photo"><img src="https://images.pexels.com/photos/5427360/pexels-photo-5427360.jpeg" /></div>
+      <div class="photo"><img src="profile.jpg" /></div>
       <div class="h-info">
         <h1>Nonkosi Sibusiso Xaba</h1>
         <p>IT / Software Tester — Durban, South Africa</p>
-        <p>DOB: <span style="filter:blur(4px)">25 May 2004</span></p>
-        <p>Address: <span style="filter:blur(4px)">43 Bhekezela Grove, Durban</span></p>
+        <p>DOB: <span>25 May 2004</span></p>
+        <p>Address: <span>43 Bhekezela Grove, Durban</span></p>
       </div>
     </div>
   </div>
@@ -97,8 +97,8 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
       <div class="card section">
         <h3>Personal Details</h3>
         <ul class="list-small">
-          <li>Contact Number: <span style="filter:blur(4px)">083 984 0749</span></li>
-          <li>Email: <span style="filter:blur(4px)">sbuxaba659@gmail.com</span></li>
+          <li>Contact Number: <span>083 984 0749</span></li>
+          <li>Email: <span>sbuxaba659@gmail.com</span></li>
           <li>Citizenship: South Africa</li>
         </ul>
       </div>
@@ -131,9 +131,9 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
       <div class="card section">
         <h3>References</h3>
         <ul class="list-small">
-          <li>Mr Mudua — <span style="filter:blur(4px)">072 062 0306</span></li>
-          <li>Mr Makathini — <span style="filter:blur(4px)">072 902 5832</span></li>
-          <li>Mark Randelhoff — <span style="filter:blur(4px)">083 660 1310</span></li>
+          <li>Mr Mudua — <span>072 062 0306</span></li>
+          <li>Mr Makathini — <span>072 902 5832</span></li>
+          <li>Mark Randelhoff — <span>083 660 1310</span></li>
         </ul>
       </div>
     </main>
@@ -141,7 +141,7 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
     <aside>
       <div class="card section contact">
         <h3>Contact Me</h3>
-        <a class="btn"><i class="fas fa-envelope"></i>Email (blurred)</a>
+        <a class="btn"><i class="fas fa-envelope"></i>sbuxaba659@gmail.com</a>
         <a class="btn" href="https://www.instagram.com/sibusiso_nx/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
         <a class="btn" href="https://www.facebook.com/kado.deep/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
         <a class="btn" href="https://www.linkedin.com/in/sibusiso-nonkosi-470238282/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
@@ -186,8 +186,27 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
 <script>
 setTimeout(()=>document.getElementById('fireAnim').remove(),1000);
 
-document.querySelectorAll('.skills span').forEach(btn=>btn.onclick=()=>{
-  const q=encodeURIComponent(btn.dataset.query);
-  window.open('https://www.google.com/search?q='+q,'_blank');
+// Skills search
+document.querySelectorAll('.skills span').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const q = encodeURIComponent(btn.dataset.query);
+    window.open('https://www.google.com/search?q='+q,'_blank');
+  });
 });
 
+// Interests buttons
+document.querySelectorAll('.interests-items div').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const url = el.getAttribute('data-href');
+    if(url) window.open(url,'_blank');
+  });
+});
+
+// Mode toggle
+const modeBtn = document.getElementById('modeToggle');
+modeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('light-mode');
+});
+</script>
+</body>
+</html>
