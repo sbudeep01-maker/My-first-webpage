@@ -77,7 +77,7 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
 <div class="container">
   <div class="card header-card">
     <div class="header">
-      <div class="photo"><img src="profile.jpg" /></div>
+      <div class="photo"><img src="https://images.pexels.com/photos/5427360/pexels-photo-5427360.jpeg" /></div>
       <div class="h-info">
         <h1>Nonkosi Sibusiso Xaba</h1>
         <p>IT / Software Tester — Durban, South Africa</p>
