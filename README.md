@@ -98,7 +98,7 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
         <h3>Personal Details</h3>
         <ul class="list-small">
           <li>Contact Number: <span>083 984 0749</span></li>
-          <li>Email: <span>sbuxaba659@gmail.com</span></li>
+          <li>Email: <span>sbudeep01@gmail.com</span></li>
           <li>Citizenship: South Africa</li>
         </ul>
       </div>
@@ -141,7 +141,7 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
     <aside>
       <div class="card section contact">
         <h3>Contact Me</h3>
-        <a class="btn"><i class="fas fa-envelope"></i>sbuxaba659@gmail.com</a>
+        <a class="btn"><i class="fas fa-envelope"></i>sbudeep01@gmail.com</a>
         <a class="btn" href="https://www.instagram.com/sibusiso_nx/" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
         <a class="btn" href="https://www.facebook.com/kado.deep/" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
         <a class="btn" href="https://www.linkedin.com/in/sibusiso-nonkosi-470238282/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
