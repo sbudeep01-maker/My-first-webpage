@@ -81,7 +81,7 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
       <div class="h-info">
         <h1>Nonkosi Sibusiso Xaba</h1>
         <p>IT / Software Tester — Durban, South Africa</p>
-        <p>DOB: <span>25 May 2004</span></p>
+        <p>Expiriance: <span>3 years</span></p>
         <p>Address: <span>43 Bhekezela Grove, Durban</span></p>
       </div>
     </div>
