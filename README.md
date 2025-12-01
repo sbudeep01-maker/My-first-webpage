@@ -80,9 +80,9 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
       <div class="photo"><img src="https://images.pexels.com/photos/5427360/pexels-photo-5427360.jpeg" /></div>
       <div class="h-info">
         <h1>Nonkosi Sibusiso Xaba</h1>
-        <p>IT / Software Tester — Durban, South Africa</p>
+        <p>IT / Software Tester / Driver — Durban, South Africa</p>
         <p>Expiriance: <span>3 years</span></p>
-        <p>Address: <span>43 Bhekezela Grove, Durban</span></p>
+        <p>Place of work: <span>259 Montpelier Rd, Morningside, Durban, 4001</span></p>
       </div>
     </div>
   </div>
