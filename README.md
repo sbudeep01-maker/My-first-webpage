@@ -97,7 +97,7 @@ body{background:var(--bg);color:var(--text);margin:0;font-family:Poppins;overflo
       <div class="card section">
         <h3>Personal Details</h3>
         <ul class="list-small">
-          <li>Contact Number: <span>083 984 0749</span></li>
+          <li>Contact Number: <span>081 804 4146</span></li>
           <li>Email: <span>sbudeep01@gmail.com</span></li>
           <li>Citizenship: South Africa</li>
         </ul>
