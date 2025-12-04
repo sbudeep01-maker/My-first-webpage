@@ -207,6 +207,40 @@ const modeBtn = document.getElementById('modeToggle');
 modeBtn.addEventListener('click',()=>{
   document.body.classList.toggle('light-mode');
 });
+
+  // Expand/Collapse Code
+const toggleBtn = document.getElementById('toggleCode');
+const codeBlock = document.getElementById('codeBlock');
+if(toggleBtn){
+  toggleBtn.addEventListener('click',()=>{
+    if(codeBlock.style.display==='none'){
+      codeBlock.style.display='block';
+      toggleBtn.textContent='Hide Code';
+      codeBlock.textContent = `# BoxDrawing.py
+# (code truncated for preview)
+
+
+${`import os
+from tkinter import Tk, Canvas, Button, Toplevel, Label, StringVar, Frame, messagebox
+from PIL import Image, ImageTk
+import tkinter.simpledialog as simpledialog
+from boxes import BoxManager
+import shutil
+import argparse
+
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-d", "--source-directory", required=True, help="source directory containing images and text files")
+
+
+class CanvasManager:`}`;
+    } else {
+     codeBlock.style.display='none';
+     toggleBtn.textContent='Show Code';
+    }
+  });
+}  
 </script>
 </body>
 </html>
