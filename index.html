@@ -137,21 +137,35 @@
 
         <aside>
             <div class="card section">
-                <h3>Contact</h3>
-                <a href="mailto:sbudeep01@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
-                <a href="https://www.linkedin.com/in/sibusiso-nonkosi-470238282/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="#" class="btn"><i class="fas fa-download"></i> Download CV</a>
-            </div>
+  <h3><i class="fas fa-laptop-code"></i> Professional Skills</h3>
+  <div class="skills" id="skillsContainer">
+    <span data-query="Software Testing Life Cycle">Software Testing</span>
+    <span data-query="IT Troubleshooting and Support">Troubleshooting</span>
+    <span data-query="Computer Networking Basics">Networking</span>
+    <span data-query="Graphic Design Principles">Graphic Design</span>
+    <span data-query="Technical Support Specialist">Technical Support</span>
+    <span data-query="Operating Systems Management">OS Management</span>
+    <span data-query="Manual vs Automated Testing">QA Testing</span>
+    <span data-query="Internet Security Best Practices">Web Security</span>
+  </div>
+</div>
 
-            <div class="card section">
-                <h3>Skills</h3>
-                <div class="skills">
-                    <span data-query="Software Testing">Testing</span>
-                    <span data-query="IT Troubleshooting">Troubleshooting</span>
-                    <span data-query="Networking">Networking</span>
-                    <span data-query="Graphic Design">Graphic Design</span>
-                </div>
-            </div>
+<script>
+  // This script ensures every button in the skills section opens a new page
+  document.querySelectorAll('.skills span').forEach(skillButton => {
+    skillButton.addEventListener('click', () => {
+      const searchQuery = skillButton.getAttribute('data-query');
+      if (searchQuery) {
+        // Encodes the query and opens in a new browser tab
+        const url = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
+        window.open(url, '_blank');
+      }
+    });
+  });
+
+  // Optional: Add a "hover" effect via JS if you want to change cursor 
+  document.getElementById('skillsContainer').style.cursor = 'pointer';
+</script>
 
             <div class="card section">
                 <h3>Interests</h3>
@@ -203,4 +217,5 @@
     }
 </script>
 </body>
+
 </html>
