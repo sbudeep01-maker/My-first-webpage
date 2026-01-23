@@ -6,81 +6,7 @@
     <title>Sibusiso — Elite CV + AI Assistant</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #05070d;
-            --card: #0d1220;
-            --text: #e8eeff;
-            --muted: #8893a8;
-            --accent: #6366f1;
-            --glow: #818cf8;
-            --radius: 16px;
-            --transition: 0.35s;
-        }
-
-        .light-mode {
-            --bg: #f4f7ff;
-            --card: #ffffff;
-            --text: #1e293b;
-            --muted: #64748b;
-            --accent: #4f46e5;
-            --glow: #6366f1;
-        }
-
-        body { background: var(--bg); color: var(--text); margin: 0; font-family: 'Poppins', sans-serif; overflow-x: hidden; transition: background 0.3s; }
-
-        /* Fire intro */
-        #fireAnim { position: fixed; inset: 0; z-index: 2000; background: url('https://i.imgur.com/9QG4g7z.gif') center/cover no-repeat; pointer-events: none; animation: fadeOut 1.2s forwards; }
-        @keyframes fadeOut { 0% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
-
-        .container { max-width: 1040px; margin: auto; padding: 40px 20px; }
-        .card { background: var(--card); border-radius: var(--radius); padding: 26px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); }
-        .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-
-        /* Header */
-        .header { display: flex; gap: 30px; flex-wrap: wrap; align-items: center; }
-        .photo { width: 140px; height: 140px; border-radius: 24px; overflow: hidden; border: 3px solid var(--accent); }
-        .photo img { width: 100%; height: 100%; object-fit: cover; }
-        .h-info h1 { font-size: 34px; margin: 0; background: linear-gradient(90deg, var(--accent), #06b6d4); -webkit-background-clip: text; color: transparent; font-weight: 800; }
-        .h-info p { margin: 6px 0; color: var(--muted); font-size: 1.1rem; }
-        .h-info span { color: var(--text); font-weight: 600; }
-
-        /* Grid */
-        .grid { display: grid; grid-template-columns: 1fr 330px; gap: 22px; }
-        @media(max-width: 880px) { .grid { grid-template-columns: 1fr; } }
-
-        .section h3 { margin: 0 0 15px; color: var(--accent); font-weight: 600; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; }
-        .list-small { list-style: none; padding: 0; margin: 0; }
-        .list-small li { margin-bottom: 10px; color: var(--muted); }
-        .list-small li span { color: var(--text); }
-
-        /* Buttons */
-        .btn { padding: 12px; display: flex; align-items: center; gap: 10px; border-radius: 12px; text-decoration: none; color: var(--text); border: 1px solid rgba(255,255,255,0.1); margin: 8px 0; transition: 0.3s; background: rgba(255,255,255,0.02); }
-        .btn:hover { background: var(--accent); color: #fff; box-shadow: 0 0 15px var(--glow); border-color: transparent; }
-
-        /* Skills */
-        .skills span { padding: 8px 16px; background: rgba(99, 102, 241, 0.1); border-radius: 10px; cursor: pointer; margin: 5px; display: inline-block; transition: 0.3s; border: 1px solid rgba(99, 102, 241, 0.2); font-size: 0.9rem; }
-        .skills span:hover { background: var(--accent); color: white; transform: scale(1.05); }
-
-        /* Interests */
-        .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .interest-item { padding: 15px; text-align: center; cursor: pointer; border-radius: 14px; background: rgba(255,255,255,0.03); transition: 0.3s; border: 1px solid rgba(255,255,255,0.05); }
-        .interest-item:hover { background: var(--card); border-color: var(--accent); transform: translateY(-5px); }
-        .interest-item i { font-size: 24px; color: var(--accent); margin-bottom: 8px; display: block; }
-
-        /* Chatbox */
-        .chatbox { position: fixed; right: 20px; bottom: 20px; width: 320px; background: var(--card); border-radius: var(--radius); box-shadow: 0 15px 50px rgba(0,0,0,0.8); border: 1px solid var(--accent); z-index: 1000; display: flex; flex-direction: column; }
-        .chat-header { padding: 15px; background: var(--accent); font-weight: 700; color: #fff; display: flex; justify-content: space-between; }
-        .chat-messages { padding: 15px; height: 200px; overflow-y: auto; font-size: 0.9rem; }
-        .msg { padding: 8px 12px; border-radius: 12px; margin-bottom: 8px; line-height: 1.4; }
-        .msg.ai { background: rgba(99, 102, 241, 0.15); align-self: flex-start; }
-        .msg.user { background: var(--accent); color: white; align-self: flex-end; margin-left: 20%; }
-        .chat-input { display: flex; padding: 10px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .chat-input input { flex: 1; background: transparent; border: none; color: var(--text); outline: none; }
-        .chat-input button { background: var(--accent); border: none; color: white; padding: 5px 15px; border-radius: 8px; cursor: pointer; }
-
-        #modeToggle { position: fixed; top: 20px; right: 20px; padding: 10px 20px; border-radius: 50px; border: none; background: var(--accent); color: #fff; cursor: pointer; z-index: 1500; font-weight: 600; box-shadow: 0 4px 15px var(--glow); }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -88,134 +14,91 @@
 <button id="modeToggle"><i class="fas fa-moon"></i> Toggle Theme</button>
 
 <div class="container">
-    <div class="card">
-        <div class="header">
-            <div class="photo"><img src="https://images.pexels.com/photos/5427360/pexels-photo-5427360.jpeg" alt="Profile"></div>
+    <header class="card">
+        <div class="header-content">
+            <div class="photo">
+                <img src="https://images.pexels.com/photos/5427360/pexels-photo-5427360.jpeg" alt="Sibusiso Profile">
+            </div>
             <div class="h-info">
                 <h1>Nonkosi Sibusiso Xaba</h1>
                 <p>IT Specialist / Software Tester / Driver</p>
-                <p><i class="fas fa-briefcase"></i> Experience: <span>3 Years</span></p>
-                <p><i class="fas fa-location-dot"></i> <span>Morningside, Durban</span></p>
+                <p><i class="fas fa-briefcase"></i> <span>3 Years Experience</span></p>
+                <p><i class="fas fa-location-dot"></i> <span>Morningside, Durban, SA</span></p>
             </div>
         </div>
-    </div>
+    </header>
 
     <div class="grid">
         <main>
-            <div class="card section">
-                <h3><i class="fas fa-bullseye"></i> Objective</h3>
-                <p>I am seeking employment where my technical skills will be challenged and new learning opportunities are available to contribute to organizational growth.</p>
+            <section class="card">
+    <h3><i class="fas fa-folder-open"></i> Featured Projects</h3>
+    <div class="project-grid">
+        <div class="project-card" data-url="https://github.com/sbudeep01-maker/automation-test">
+            <div class="project-info">
+                <h4>Automated QA Suite</h4>
+                <p>A collection of Selenium scripts for testing web application login flows.</p>
+                <span class="tag">Selenium</span> <span class="tag">Java</span>
             </div>
-
-            <div class="card section">
-                <h3><i class="fas fa-user"></i> Personal Details</h3>
-                <ul class="list-small">
-                    <li>Contact Number: <span>081 804 4146</span></li>
-                    <li>Email: <span>sbudeep01@gmail.com</span></li>
-                    <li>Citizenship: <span>South African</span></li>
-                </ul>
+        </div>
+        
+        <div class="project-card" data-url="https://github.com/sbudeep01-maker/network-tool">
+            <div class="project-info">
+                <h4>Network Diagnostics Tool</h4>
+                <p>Python-based utility to check server uptime and latency across local networks.</p>
+                <span class="tag">Python</span> <span class="tag">Networking</span>
             </div>
+        </div>
+    </div>
+</section>
+            <section class="card">
+    <h3>Detailed Evidence</h3>
+    <p class="muted-text">View my full technical documentation:</p>
+    <a href="reports.html" class="btn"><i class="fas fa-file-medical-alt"></i> View Full QA Report</a>
+</section>
 
-            <div class="card section">
+            <section class="card">
                 <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                 <ul class="list-small">
-                    <li><strong>Burnwood Secondary School</strong> — Matric (2018–2022)</li>
-                    <li><strong>Rural Metro EMS</strong> — First Aid & NFPA Firefighter (2023)</li>
+                    <li><strong>Burnwood Secondary</strong> — Matric (2018–2022)</li>
+                    <li><strong>Rural Metro EMS</strong> — First Aid & Firefighter (2023)</li>
                 </ul>
-            </div>
-
-            <div class="card section">
-                <h3><i class="fas fa-laptop-code"></i> Experience</h3>
-                <ul class="list-small">
-                    <li><strong>Cathexis Technologies</strong> — Software Tester & Support (2023–Present)</li>
-                    <li>• Manual software testing and bug reporting.</li>
-                    <li>• Providing technical IT support and troubleshooting.</li>
-                    <li>• Secure logistics and corporate driving duties.</li>
-                </ul>
-            </div>
+            </section>
         </main>
 
         <aside>
-            <div class="card section">
-  <h3><i class="fas fa-laptop-code"></i> Professional Skills</h3>
-  <div class="skills" id="skillsContainer">
-    <span data-query="Software Testing Life Cycle">Software Testing</span>
-    <span data-query="IT Troubleshooting and Support">Troubleshooting</span>
-    <span data-query="Computer Networking Basics">Networking</span>
-    <span data-query="Graphic Design Principles">Graphic Design</span>
-    <span data-query="Technical Support Specialist">Technical Support</span>
-    <span data-query="Operating Systems Management">OS Management</span>
-    <span data-query="Manual vs Automated Testing">QA Testing</span>
-    <span data-query="Internet Security Best Practices">Web Security</span>
-  </div>
-</div>
+            <section class="card">
+                <h3>Contact & Socials</h3>
+                <a href="contact.html" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://www.linkedin.com/in/sibusiso-nonkosi-470238282/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/sbudeep01-maker" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub Portfolio</a>
+            </section>
 
-<script>
-  // This script ensures every button in the skills section opens a new page
-  document.querySelectorAll('.skills span').forEach(skillButton => {
-    skillButton.addEventListener('click', () => {
-      const searchQuery = skillButton.getAttribute('data-query');
-      if (searchQuery) {
-        // Encodes the query and opens in a new browser tab
-        const url = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-        window.open(url, '_blank');
-      }
-    });
-  });
-
-  // Optional: Add a "hover" effect via JS if you want to change cursor 
-  document.getElementById('skillsContainer').style.cursor = 'pointer';
-</script>
-
-            <div class="card section">
-                <h3>Interests</h3>
-                <div class="interests-grid">
-                    <div class="interest-item" onclick="window.open('https://www.youtube.com/@KADOrsa')"><i class="fas fa-music"></i>Music</div>
-                    <div class="interest-item" onclick="window.open('https://github.com/sbudeep01-maker')"><i class="fas fa-code"></i>Tech</div>
+            <section class="card">
+                <h3>Clickable Skills</h3>
+                <p class="muted-text">Click a skill to learn more:</p>
+                <div class="skills" id="skillsContainer">
+                    <span data-url="https://www.google.com/search?q=Software+Testing+Best+Practices">Software Testing</span>
+                    <span data-url="https://www.google.com/search?q=IT+Support+Troubleshooting+Guide">Troubleshooting</span>
+                    <span data-url="https://www.google.com/search?q=Network+Security+Fundamentals">Networking</span>
+                    <span data-url="https://www.google.com/search?q=UI+UX+Graphic+Design+Principles">Graphic Design</span>
+                    <span data-url="https://www.google.com/search?q=First+Aid+Level+3+Certification">First Aid L3</span>
                 </div>
-            </div>
+            </section>
         </aside>
     </div>
 </div>
 
 <div class="chatbox">
-    <div class="chat-header"><span>Ask AI about Sbu</span> <i class="fas fa-robot"></i></div>
+    <div class="chat-header">Sbu AI Assistant</div>
     <div class="chat-messages" id="chatMsgs">
-        <div class="msg ai">Hi! I'm Sibusiso's AI assistant. What would you like to know about his experience or skills?</div>
+        <div class="msg ai">Hello! Ask me about Sibusiso's skills or experience.</div>
     </div>
     <div class="chat-input">
-        <input type="text" id="userInput" placeholder="Ask a question...">
-        <button onclick="sendMessage()">Send</button>
+        <input type="text" id="userInput" placeholder="Ask something...">
+        <button id="sendBtn">Send</button>
     </div>
 </div>
 
-<script>
-    // Theme Toggle
-    const modeBtn = document.getElementById('modeToggle');
-    modeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        modeBtn.innerHTML = document.body.classList.contains('light-mode') ? 
-            '<i class="fas fa-sun"></i> Toggle Theme' : '<i class="fas fa-moon"></i> Toggle Theme';
-    });
-
-    // Simple AI Simulation
-    function sendMessage() {
-        const input = document.getElementById('userInput');
-        const msgs = document.getElementById('chatMsgs');
-        if(!input.value) return;
-
-        msgs.innerHTML += `<div class="msg user">${input.value}</div>`;
-        
-        setTimeout(() => {
-            let response = "That's a great question! Sibusiso has strong experience in Software Testing and IT support at Cathexis Technologies.";
-            if(input.value.toLowerCase().includes('contact')) response = "You can reach him at 081 804 4146.";
-            msgs.innerHTML += `<div class="msg ai">${response}</div>`;
-            msgs.scrollTop = msgs.scrollHeight;
-        }, 1000);
-        
-        input.value = '';
-    }
-</script>
+<script src="script.js"></script>
 </body>
-
 </html>

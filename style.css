@@ -1,0 +1,228 @@
+:root {
+    --bg: #05070d;
+    --card: #0d1220;
+    --text: #e8eeff;
+    --muted: #8893a8;
+    --accent: #6366f1;
+    --glow: #818cf8;
+    --radius: 16px;
+}
+
+.light-mode {
+    --bg: #f0f2f5;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --accent: #4f46e5;
+    --glow: #4f46e5;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+#fireAnim {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: url('https://i.imgur.com/9QG4g7z.gif') center/cover no-repeat;
+    animation: fadeOut 1.5s forwards;
+    pointer-events: none;
+}
+
+@keyframes fadeOut {
+    100% { opacity: 0; visibility: hidden; }
+}
+
+.container {
+    max-width: 1040px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.header-content { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+.photo { width: 150px; height: 150px; border-radius: 20px; overflow: hidden; border: 3px solid var(--accent); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.h-info h1 { margin: 0; font-size: 2.5rem; color: var(--accent); }
+
+.grid { display: grid; grid-template-columns: 1fr 330px; gap: 20px; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover { background: var(--accent); color: white; transform: translateX(5px); }
+
+.skills span {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.skills span:hover { background: var(--accent); color: white; }
+
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.chat-header { background: var(--accent); color: white; padding: 10px; font-weight: bold; }
+.chat-messages { height: 150px; overflow-y: auto; padding: 10px; font-size: 0.85rem; }
+.msg.user { text-align: right; color: var(--accent); }
+
+#modeToggle { position: fixed; top: 20px; right: 20px; z-index: 1001; padding: 10px 15px; border-radius: 20px; cursor: pointer; border: none; background: var(--accent); color: white; }
+/* Project Grid Layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+    .project-grid { grid-template-columns: 1fr; }
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    background: rgba(99, 102, 241, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.project-card h4 {
+    margin: 0 0 10px 0;
+    color: var(--accent);
+}
+
+.project-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.tag {
+    font-size: 0.7rem;
+    background: var(--card);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+/* Table Styles */
+.test-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.test-table th, .test-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.test-table th { color: var(--accent); text-transform: uppercase; font-size: 0.8rem; }
+
+.status-pass { color: #4ade80; font-weight: bold; }
+.status-fail { color: #f87171; font-weight: bold; }
+
+/* Navigation highlight */
+.nav-link {
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* Bug Report specific */
+.bug-report-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #f87171;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+}
+.bug-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.bug-id { font-weight: bold; color: var(--accent); }
+.priority.high { background: #7f1d1d; color: #fca5a5; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; }
+.bug-body ol { padding-left: 20px; }
+
+/* Contact Form */
+.contact-form .form-group { margin-bottom: 15px; }
+.contact-form label { display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--accent); }
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+/* Status Colors */
+.status-pass { color: #4ade80; font-weight: 600; }
+.status-fail { color: #f87171; font-weight: 600; }
+
+/* Table Design */
+.test-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.test-table th, .test-table td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.test-table th { color: var(--accent); font-size: 0.8rem; }
+
+/* Bug Report Card */
+.bug-report-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #f87171;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 10px;
+}
+.bug-id { color: #f87171; text-transform: uppercase; font-size: 0.7rem; font-weight: bold; }

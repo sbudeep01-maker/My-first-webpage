@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sibusiso — QA Reports</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="card">
+            <a href="index.html" class="btn" style="width: fit-content;"><i class="fas fa-arrow-left"></i> Back to CV</a>
+            <h1><i class="fas fa-vial"></i> QA Documentation</h1>
+        </header>
+
+        <section class="card">
+            <h3>Test Case Execution</h3>
+            <div style="overflow-x: auto;">
+                <table class="test-table">
+                    <thead>
+                        <tr><th>ID</th><th>Description</th><th>Expected</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>TC-01</td><td>Valid Login</td><td>Dashboard View</td><td class="status-pass">PASS</td></tr>
+                        <tr><td>TC-02</td><td>Wrong Pass</td><td>Error Message</td><td class="status-pass">PASS</td></tr>
+                        <tr><td>TC-03</td><td>Reset Pass</td><td>Email Sent</td><td class="status-fail">FAIL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3><i class="fas fa-bug"></i> Defect Report: BUG-204</h3>
+            <div class="bug-report-container">
+                <div class="bug-header">
+                    <span class="bug-id">High Severity</span>
+                </div>
+                <div class="bug-body">
+                    <h4>Title: Checkout Crash on Mobile</h4>
+                    <p><strong>Steps:</strong> Add item > Go to Checkout > Select Visa.</p>
+                    <p><strong>Actual:</strong> App closes unexpectedly.</p>
+                    <p class="status-fail">Status: Open / Reassigned to Dev</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Testing Workflow</h3>
+            <p>I follow the standard STLC (Software Testing Life Cycle) to ensure quality.</p>
+            
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
