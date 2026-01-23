@@ -1,57 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sibusiso — QA Reports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="card">
-            <a href="index.html" class="btn" style="width: fit-content;"><i class="fas fa-arrow-left"></i> Back to CV</a>
-            <h1><i class="fas fa-vial"></i> QA Documentation</h1>
+
+    <div id="preloader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-nav">
+        <div class="container">
+            <a href="index.html" class="btn btn-sm btn-outline-secondary"><i class="fas fa-arrow-left"></i> Back to CV</a>
+            <button class="btn btn-outline-primary btn-sm rounded-pill ms-auto" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <header class="text-center mb-5">
+            <h1 class="fw-bold text-accent"><i class="fas fa-vial"></i> QA Documentation</h1>
+            <p class="text-muted">Technical artifacts demonstrating testing methodologies.</p>
         </header>
 
-        <section class="card">
-            <h3>Test Case Execution</h3>
-            <div style="overflow-x: auto;">
-                <table class="test-table">
-                    <thead>
-                        <tr><th>ID</th><th>Description</th><th>Expected</th><th>Status</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>TC-01</td><td>Valid Login</td><td>Dashboard View</td><td class="status-pass">PASS</td></tr>
-                        <tr><td>TC-02</td><td>Wrong Pass</td><td>Error Message</td><td class="status-pass">PASS</td></tr>
-                        <tr><td>TC-03</td><td>Reset Pass</td><td>Email Sent</td><td class="status-fail">FAIL</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="card">
-            <h3><i class="fas fa-bug"></i> Defect Report: BUG-204</h3>
-            <div class="bug-report-container">
-                <div class="bug-header">
-                    <span class="bug-id">High Severity</span>
-                </div>
-                <div class="bug-body">
-                    <h4>Title: Checkout Crash on Mobile</h4>
-                    <p><strong>Steps:</strong> Add item > Go to Checkout > Select Visa.</p>
-                    <p><strong>Actual:</strong> App closes unexpectedly.</p>
-                    <p class="status-fail">Status: Open / Reassigned to Dev</p>
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="card border-0 shadow hover-card">
+                    <div class="card-header bg-body border-0 pt-4 px-4">
+                        <h5 class="card-title fw-bold">Test Case Execution</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr><th>ID</th><th>Description</th><th>Expected Result</th><th>Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>TC-01</td><td>Valid Login</td><td>Dashboard View</td><td><span class="badge bg-success">PASS</span></td></tr>
+                                    <tr><td>TC-02</td><td>Wrong Password</td><td>Error Message</td><td><span class="badge bg-success">PASS</span></td></tr>
+                                    <tr><td>TC-03</td><td>Reset Password</td><td>Email Sent</td><td><span class="badge bg-danger">FAIL</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="card">
-            <h3>Testing Workflow</h3>
-            <p>I follow the standard STLC (Software Testing Life Cycle) to ensure quality.</p>
-            
-        </section>
+            <div class="col-12">
+                <div class="card border-0 shadow hover-card border-start border-danger border-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 fw-bold text-danger"><i class="fas fa-bug"></i> Defect: BUG-204</h3>
+                            <span class="badge bg-danger rounded-pill">High Severity</span>
+                        </div>
+                        <div class="bg-body-tertiary p-3 rounded">
+                            <h6 class="fw-bold">Checkout Crash on Mobile</h6>
+                            <p class="small mb-1"><strong>Steps:</strong> Add item > Go to Checkout > Select Visa.</p>
+                            <p class="small mb-1"><strong>Actual:</strong> App closes unexpectedly.</p>
+                            <hr>
+                            <p class="small fw-bold text-danger mb-0">Status: Open / Reassigned to Dev</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

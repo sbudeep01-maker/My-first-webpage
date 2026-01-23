@@ -108,121 +108,160 @@ body {
 .msg.user { text-align: right; color: var(--accent); }
 
 #modeToggle { position: fixed; top: 20px; right: 20px; z-index: 1001; padding: 10px 15px; border-radius: 20px; cursor: pointer; border: none; background: var(--accent); color: white; }
-/* Project Grid Layout */
-.project-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 15px;
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root {
+    --accent-color: #6366f1;
+    --bs-body-font-family: 'Poppins', sans-serif;
 }
 
-@media (max-width: 600px) {
-    .project-grid { grid-template-columns: 1fr; }
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.project-card:hover {
-    background: rgba(99, 102, 241, 0.05);
-    border-color: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.project-card h4 {
-    margin: 0 0 10px 0;
-    color: var(--accent);
-}
-
-.project-card p {
-    font-size: 0.85rem;
-    color: var(--muted);
-    margin-bottom: 15px;
-}
-
-.tag {
-    font-size: 0.7rem;
-    background: var(--card);
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-right: 5px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-/* Table Styles */
-.test-table {
+/* --- PRELOADER --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: rgba(255, 255, 255, 0.02);
+    height: 100%;
+    background: var(--bs-body-bg);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.test-table th, .test-table td {
-    padding: 12px;
-    text-align: left;
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- FIRE ANIMATION --- */
+#fireAnim {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url('https://i.imgur.com/9QG4g7z.gif') center/cover no-repeat;
+    opacity: 0.05; /* Subtle background texture */
+    pointer-events: none;
+}
+
+/* --- LAYOUT TWEAKS --- */
+body {
+    padding-top: 80px; /* Space for fixed navbar */
+}
+
+/* Navbar Blur Effect */
+.custom-nav {
+    background: rgba(var(--bs-body-bg-rgb), 0.8);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.test-table th { color: var(--accent); text-transform: uppercase; font-size: 0.8rem; }
-
-.status-pass { color: #4ade80; font-weight: bold; }
-.status-fail { color: #f87171; font-weight: bold; }
-
-/* Navigation highlight */
-.nav-link {
-    color: var(--accent);
-    text-decoration: underline;
-    cursor: pointer;
+/* Custom Text Colors */
+.text-accent {
+    color: var(--accent-color) !important;
 }
-/* Bug Report specific */
-.bug-report-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 4px solid #f87171;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 15px;
-}
-.bug-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
-.bug-id { font-weight: bold; color: var(--accent); }
-.priority.high { background: #7f1d1d; color: #fca5a5; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; }
-.bug-body ol { padding-left: 20px; }
 
-/* Contact Form */
-.contact-form .form-group { margin-bottom: 15px; }
-.contact-form label { display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--accent); }
-.contact-form input, .contact-form textarea {
+/* --- CARD STYLING --- */
+.card {
+    border-radius: 16px;
+    background: var(--bs-body-bg); /* Use Bootstrap theme bg */
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Dark Mode Specific Overrides */
+[data-bs-theme="dark"] .card {
+    background: #0d1220; /* Your original dark blue card color */
+    border-color: rgba(255,255,255,0.08);
+}
+
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* --- PROFILE PHOTO --- */
+.photo-wrapper {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+}
+
+.photo-wrapper img {
     width: 100%;
-    padding: 12px;
-    background: var(--bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text);
-    border-radius: 8px;
-    box-sizing: border-box;
+    height: 100%;
+    object-fit: cover;
 }
-/* Status Colors */
-.status-pass { color: #4ade80; font-weight: 600; }
-.status-fail { color: #f87171; font-weight: 600; }
 
-/* Table Design */
-.test-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-.test-table th, .test-table td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.test-table th { color: var(--accent); font-size: 0.8rem; }
-
-/* Bug Report Card */
-.bug-report-container {
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 4px solid #f87171;
+/* --- SKILLS & TAGS --- */
+.skill-tag {
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 6px 12px;
     border-radius: 8px;
-    padding: 20px;
-    margin-top: 10px;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    transition: 0.2s;
 }
-.bug-id { color: #f87171; text-transform: uppercase; font-size: 0.7rem; font-weight: bold; }
+
+.skill-tag:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* --- PROJECT CARD --- */
+.clickable-card {
+    cursor: pointer;
+    background: rgba(255,255,255,0.02);
+    transition: 0.3s;
+}
+
+.clickable-card:hover {
+    border-color: var(--accent-color) !important;
+    background: rgba(99, 102, 241, 0.05);
+}
+
+/* --- CHATBOX --- */
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    z-index: 1050;
+    border: 1px solid var(--accent-color);
+}
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+}
+.msg.user {
+    text-align: right;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+.btn-primary:hover {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+}
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
