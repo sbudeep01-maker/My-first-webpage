@@ -1,106 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Sibusiso — Elite CV + AI Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sibusiso — Elite CV + AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="fireAnim"></div>
-<button id="modeToggle"><i class="fas fa-moon"></i> Toggle Theme</button>
-
-<div class="container">
-    <header class="card">
-        <div class="header-content">
-            <div class="photo">
-                <img src="https://images.pexels.com/photos/5427360/pexels-photo-5427360.jpeg" alt="Sibusiso Profile">
-            </div>
-            <div class="h-info">
-                <h1>Nonkosi Sibusiso Xaba</h1>
-                <p>IT Specialist / Software Tester / Driver</p>
-                <p><i class="fas fa-briefcase"></i> <span>3 Years Experience</span></p>
-                <p><i class="fas fa-location-dot"></i> <span>Morningside, Durban, SA</span></p>
-            </div>
+    <div id="preloader">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
         </div>
-    </header>
+    </div>
 
-    <div class="grid">
-        <main>
-            <section class="card">
-                <h3><i class="fas fa-briefcase"></i> Professional Experience</h3>
-                <div class="exp-item">
-                    <h4>Cathexis Technologies</h4>
-                    <p class="sub">Software Tester & IT Support (2023–Present)</p>
-                    <ul class="list-small">
-                        <li>Systematic software testing and bug reporting.</li>
-                        <li>Technical IT support and hardware troubleshooting.</li>
-                        <li>Corporate logistics and secure driving.</li>
-                    </ul>
-                </div>
-            </section>
+    <div id="fireAnim"></div>
 
-            <section class="card">
-                <h3><i class="fas fa-folder-open"></i> Featured Projects</h3>
-                <div class="project-grid">
-                    <div class="project-card" data-url="https://github.com/sbudeep01-maker/automation-test">
-                        <div class="project-info">
-                            <h4>Automated QA Suite</h4>
-                            <p>Selenium scripts for testing web application login flows.</p>
-                            <span class="tag">Selenium</span> <span class="tag">Java</span>
-                        </div>
+    <nav class="navbar navbar-expand-lg fixed-top custom-nav">
+        <div class="container">
+            <span class="navbar-brand fw-bold text-accent"><i class="fas fa-terminal"></i> SBU.DEV</span>
+            <button class="btn btn-outline-primary btn-sm rounded-pill" id="themeToggle">
+                <i class="fas fa-moon"></i> <span>Dark Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <header class="card border-0 shadow-lg mb-4 hover-card">
+            <div class="card-body p-4">
+                <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+                    <div class="photo-wrapper">
+                        <img src="https://images.pexels.com/photos/5427360/pexels-photo-5427360.jpeg" alt="Sibusiso" class="img-fluid rounded-4">
                     </div>
-                    <div class="project-card" data-url="https://github.com/sbudeep01-maker/network-tool">
-                        <div class="project-info">
-                            <h4>Network Diagnostics Tool</h4>
-                            <p>Python utility for checking server uptime and latency.</p>
-                            <span class="tag">Python</span> <span class="tag">Networking</span>
+                    <div class="text-center text-md-start">
+                        <h1 class="fw-bold mb-1">Nonkosi Sibusiso Xaba</h1>
+                        <p class="text-accent mb-2 fw-semibold">IT Specialist / Software Tester / Driver</p>
+                        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 text-muted small">
+                            <span><i class="fas fa-briefcase"></i> 3 Years Exp</span>
+                            <span><i class="fas fa-location-dot"></i> Durban, SA</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </header>
 
-            <section class="card">
-                <h3>Detailed Evidence</h3>
-                <p class="muted-text">View my full technical documentation:</p>
-                <button class="btn" data-url="reports.html"><i class="fas fa-file-medical-alt"></i> View Full QA Report</button>
-            </section>
-        </main>
+        <div class="row g-4">
+            <main class="col-lg-8">
+                <section class="card border-0 shadow mb-4 hover-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title h5 text-accent mb-3"><i class="fas fa-briefcase me-2"></i> Professional Experience</h3>
+                        <div class="border-start border-primary border-2 ps-3 ms-1">
+                            <h5 class="fw-bold">Cathexis Technologies</h5>
+                            <p class="text-muted small mb-2">Software Tester & IT Support (2023–Present)</p>
+                            <ul class="mb-0 small text-secondary">
+                                <li>Systematic software testing and bug reporting.</li>
+                                <li>Technical IT support and hardware troubleshooting.</li>
+                                <li>Corporate logistics and secure driving.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-        <aside>
-            <section class="card">
-                <h3>Contact & Socials</h3>
-                <button class="btn" data-url="contact.html"><i class="fas fa-envelope"></i> Email Me</button>
-                <button class="btn" data-url="https://www.linkedin.com/in/sibusiso-nonkosi-470238282/"><i class="fab fa-linkedin"></i> LinkedIn</button>
-            </section>
+                <section class="card border-0 shadow mb-4 hover-card">
+                    <div class="card-body p-4">
+                        <h3 class="card-title h5 text-accent mb-3"><i class="fas fa-folder-open me-2"></i> Featured Projects</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="project-card h-100 p-3 rounded border clickable-card" data-url="https://github.com/sbudeep01-maker/automation-test">
+                                    <h6 class="fw-bold text-primary">Automated QA Suite</h6>
+                                    <p class="small text-muted mb-2">Selenium scripts for testing web application login flows.</p>
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Selenium</span>
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Java</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="project-card h-100 p-3 rounded border clickable-card" data-url="https://github.com/sbudeep01-maker/network-tool">
+                                    <h6 class="fw-bold text-primary">Network Tool</h6>
+                                    <p class="small text-muted mb-2">Python utility for checking server uptime and latency.</p>
+                                    <div>
+                                        <span class="badge bg-info-subtle text-info border border-info-subtle">Python</span>
+                                        <span class="badge bg-info-subtle text-info border border-info-subtle">Net</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            <section class="card">
-                <h3>Clickable Skills</h3>
-                <p class="muted-text">Click a skill to learn more:</p>
-                <div class="skills" id="skillsContainer">
-                    <span data-url="https://www.google.com/search?q=Software+Testing+Best+Practices">Software Testing</span>
-                    <span data-url="https://www.google.com/search?q=IT+Support+Troubleshooting+Guide">Troubleshooting</span>
-                    <span data-url="https://www.google.com/search?q=Network+Security+Fundamentals">Networking</span>
-                </div>
-            </section>
-        </aside>
+                <section class="card border-0 shadow hover-card">
+                    <div class="card-body p-4 text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center">
+                        <div>
+                            <h3 class="h5 mb-1">Detailed Evidence</h3>
+                            <p class="small text-muted mb-md-0">View my full technical documentation.</p>
+                        </div>
+                        <a href="reports.html" class="btn btn-primary"><i class="fas fa-file-medical-alt me-2"></i> View QA Report</a>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="col-lg-4">
+                <section class="card border-0 shadow mb-4 hover-card">
+                    <div class="card-body p-4 d-grid gap-2">
+                        <h3 class="h5 text-accent mb-3">Contact & Socials</h3>
+                        <a href="contact.html" class="btn btn-outline-light d-flex align-items-center justify-content-center gap-2">
+                            <i class="fas fa-envelope"></i> Email Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/sibusiso-nonkosi-470238282/" target="_blank" class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </section>
+
+                <section class="card border-0 shadow hover-card">
+                    <div class="card-body p-4">
+                        <h3 class="h5 text-accent mb-3">Clickable Skills</h3>
+                        <p class="small text-muted">Click to learn more:</p>
+                        <div class="d-flex flex-wrap gap-2 skills-container">
+                            <span class="skill-tag" data-url="https://www.google.com/search?q=Software+Testing+Best+Practices">Software Testing</span>
+                            <span class="skill-tag" data-url="https://www.google.com/search?q=IT+Support+Troubleshooting+Guide">Troubleshooting</span>
+                            <span class="skill-tag" data-url="https://www.google.com/search?q=Network+Security+Fundamentals">Networking</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
     </div>
-</div>
 
-<div class="chatbox">
-    <div class="chat-header">Sbu AI Assistant</div>
-    <div class="chat-messages" id="chatMsgs">
-        <div class="msg ai">Hello! Ask me about Sibusiso's skills or experience.</div>
+    <div class="chatbox shadow-lg rounded-top overflow-hidden">
+        <div class="chat-header p-2 bg-primary text-white d-flex justify-content-between align-items-center">
+            <small class="fw-bold"><i class="fas fa-robot"></i> Sbu AI</small>
+        </div>
+        <div class="chat-messages p-3 bg-body" id="chatMsgs">
+            <div class="msg ai text-muted small mb-2">Hello! Ask me about Sibusiso's skills.</div>
+        </div>
+        <div class="chat-input p-2 bg-body border-top d-flex gap-2">
+            <input type="text" id="userInput" class="form-control form-control-sm" placeholder="Ask...">
+            <button id="sendBtn" class="btn btn-primary btn-sm">Send</button>
+        </div>
     </div>
-    <div class="chat-input">
-        <input type="text" id="userInput" placeholder="Ask...">
-        <button id="sendBtn">Send</button>
-    </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
